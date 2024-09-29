@@ -22,8 +22,8 @@
 
 .header__links-list-item {
   justify-items: center;
-  list-style-type: circle;
   justify-self: center;
+  list-style-type: circle;
 }
 
 .header__links-list-item_no-bullit {
@@ -32,9 +32,9 @@
 
 .header__link {
   display: grid;
+  justify-content: space-evenly;
   text-decoration: underline;
   text-underline-offset: 4px;
-  justify-content: space-evenly;
 }
 
 .header__link_active {
@@ -42,8 +42,8 @@
 }
 
 .header__logo {
-  width: min-content;
   justify-self: right;
+  width: min-content;
 }
 
 .header__logo-image {
@@ -66,10 +66,10 @@
 
 .cover {
   position: relative;
-  background: url(../images/cover.jpg) no-repeat center / cover;
   display: grid;
   color: #fff;
   text-transform: uppercase;
+  background: url(../images/cover.jpg) no-repeat center / cover;
 }
 
 .overlay {
@@ -79,10 +79,10 @@
 }
 
 .cover__title {
+  z-index: 1;
   padding: 164px 50px 138px;
   font-size: 100px;
   letter-spacing: 0.3em;
-  z-index: 1;
 }
 
 .letter-spacing-extended {
@@ -99,42 +99,42 @@
 }
 
 .aligned-text_center {
-  text-align: center;
   line-height: 1;
+  text-align: center;
 }
 
 .aligned-text_right {
-  text-align: right;
   line-height: 1;
+  text-align: right;
 }
 
 .cover__description {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 51px;
-  margin-top: -21px;
   z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -21px;
+  padding-bottom: 51px;
 }
 
 .cover__description-text {
+  padding: 0 77px;
+  font-weight: 400;
   font-size: 22px;
   line-height: 28px;
-  font-weight: 400;
   word-spacing: 19px;
-  padding: 0 77px;
 }
 
 .bet-button {
-  width: 256px;
-  height: 51px;
+  min-width: 256px;
+  min-height: 51px;
   margin-right: 50px;
+  border: 1px solid #fff;
   color: #fff;
   font-family: Raleway, sans-serif;
   font-size: 22px;
   text-transform: uppercase;
   background-color: transparent;
-  border: 1px solid #fff;
 }
 
 .lots {
@@ -143,24 +143,21 @@
 
 .lots__heading {
   margin: 0 0 27px 40px;
-  font-size: 40px;
   font-weight: bold;
+  font-size: 40px;
   text-transform: uppercase;
 }
 
 .lots__card-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(334px, 1fr));
+  gap: 25px;
   margin-bottom: 30px;
+  list-style-type: none;
 }
 
 .lots__card-list-item {
-  position: relative;
-  max-width: 334px;
-  height: 100%;
-  flex-grow: 1;
+  min-height: 563px;
 }
 
 .card-link {
@@ -170,11 +167,14 @@
 }
 
 .card {
+  position: relative;
+  /* Было бы хорошо использовать, но тогда не попадает в Pixel Perfect
+  gap: 20px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   padding: 51px 40px 48px;
-  height: 563px;
   color: #fff;
 }
 
@@ -191,18 +191,18 @@
 }
 
 .card__title {
+  z-index: 1;
   font-size: 22px;
   line-height: 1.2em;
-  text-transform: uppercase;
   text-decoration: underline #fff 1px;
   text-underline-offset: 3px;
-  z-index: 1;
+  text-transform: uppercase;
 }
 
 .card__text {
+  z-index: 1;
   font-size: 20px;
   line-height: 1.2em;
-  z-index: 1;
 }
 
 .lots__look-more-link {
@@ -226,9 +226,9 @@
 
 .about__logo {
   display: flex;
-  margin: auto;
   width: 240px;
   height: 240px;
+  margin: auto;
   border-radius: 50%;
   background-color: #000;
 }
@@ -240,14 +240,14 @@
 
 .about__title {
   align-self: center;
-  font-size: 40px;
   font-weight: bold;
+  font-size: 40px;
   text-transform: uppercase;
 }
 
 .about__text {
-  grid-row: 2/-3;
   grid-column: 2/3;
+  grid-row: 2/-3;
   font-size: 20px;
   line-height: 1.2em;
 }
@@ -261,11 +261,11 @@
 }
 
 .footer {
-  margin-top: 173px;
-  padding: 0 50px 88px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 82px;
+  margin-top: 173px;
+  padding: 0 50px 88px;
 }
 
 .footer__menu {
@@ -273,19 +273,20 @@
 }
 
 .footer__menu-list {
-  list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  list-style-type: none;
 }
 /* Лишний класс
 .footer__menu-list-item {
+
 }
 */
 .footer__menu-link {
-  text-underline-offset: 4px;
+  font-size: 18px;
   line-height: 22px;
-  letter-spacing: 1px;
+  text-underline-offset: 4px;
 }
 
 .footer__menu-link_active {
@@ -300,9 +301,11 @@
 }
 /*Лишние классы
 .footer__social-list-item {
+
 }
 
 .footer__social-link {
+
 }
 */
 .footer__social-icon {
